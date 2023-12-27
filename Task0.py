@@ -13,7 +13,7 @@ with open('calls.csv', 'r') as f:
     calls = list(reader)
 
 
-def get_date_and_time(date):
+def get_date_and_time(date: str) -> tuple(str, str):
     """This function takes a date as input and extracts the date and time components."""
     result = date.split()
     return result[0], result[1]
