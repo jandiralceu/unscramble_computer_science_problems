@@ -13,6 +13,15 @@ with open('calls.csv', 'r') as f:
     calls = list(reader)
 
 
+"""
+TASK 0:
+What is the first record of texts and what is the last record of calls?
+Print messages:
+"First record of texts, <incoming number> texts <answering number> at time <time>"
+"Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
+"""
+
+
 def get_date_and_time(date: str) -> tuple(str, str):
     """
     This function takes a date string as input and extracts the date and time values.
