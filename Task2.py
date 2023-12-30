@@ -27,24 +27,12 @@ all_contacts = {}
 
 
 for entry in calls:
-    sender = entry[0]
-    receiver = entry[1]
-    
-    all_contacts[sender] = all_contacts[sender] + int(entry[3]) if sender in all_contacts.keys() else int(entry[3])
-    all_contacts[receiver] = all_contacts[receiver] + int(entry[3]) if receiver in all_contacts.keys() else int(entry[3])
+    all_contacts[entry[0]] = all_contacts.get(entry[0], 0) + int(entry[3])
+    all_contacts[entry[1]] = all_contacts.get(entry[1], 0) + int(entry[3])
 
 
-telephone = next(iter(all_contacts))
-'''Telephone number with the longest time spent on the phone'''
+telephone = max(all_contacts, key=all_contacts.get)
 time_in_seconds = all_contacts[telephone]
-'''Time spent on the phone by the telephone number with the longest time spent on the phone'''
-
-
-for key in all_contacts:
-    if all_contacts[key] > time_in_seconds:
-        time_in_seconds = all_contacts[key]
-        telephone = key
     
-
 
 print(f"{telephone} spent the longest time, {time_in_seconds} seconds, on the phone during September 2016.")
