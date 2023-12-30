@@ -76,7 +76,8 @@ def get_prefix_number(number: str) -> str:
   '''
   
   if is_fixed_line(number=number):
-    return number[1:4]
+    closing_bracket_position = number.find(')')
+    return number[1:closing_bracket_position]
   elif is_mobile(number=number):
     return number[0:4]
   elif is_telemarketer(number=number):
