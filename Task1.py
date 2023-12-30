@@ -20,16 +20,14 @@ Print a message:
 """
 
 
-numbers_list: [str] = []
+numbers_list = set()
 
 for entry in texts:
-    numbers_list.append(entry[0])
-    numbers_list.append(entry[1])
+    numbers_list.add(entry[0])
+    numbers_list.add(entry[1])
 
 for entry in calls:
-    numbers_list.append(entry[0])
-    numbers_list.append(entry[1])
+    numbers_list.add(entry[0])
+    numbers_list.add(entry[1])
 
-contacts = set(numbers_list)
-
-print(f"There are {len(contacts)} different telephone numbers in the records.")
+print(f"There are {len(numbers_list)} different telephone numbers in the records.")
