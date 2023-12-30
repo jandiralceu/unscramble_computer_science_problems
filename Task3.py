@@ -49,7 +49,7 @@ The percentage should have 2 decimal digits
 def is_fixed_line(number: str) -> bool:
   '''Checks whether a number is a fixed line number or not.'''
   
-  return re.fullmatch(r'\(0\d{2}\)\d+', number) is not None
+  return re.fullmatch(r'\(0\d+\)\d+', number) is not None
 
 
 def is_mobile(number: str) -> bool:
