@@ -22,7 +22,7 @@ Print messages:
 """
 
 
-def get_date_and_time(date: str) -> tuple(str, str):
+def get_date_and_time(date: str):
     """
     This function takes a date string as input and extracts the date and time values.
     """
@@ -36,8 +36,7 @@ first_texts_record_date_time = get_date_and_time(first_texts_record[2])
 last_calls_record = calls[-1]
 last_calls_record_date_time = get_date_and_time(last_calls_record[2])
 
-print(f"First record of texts, {first_texts_record[0]} texts {first_texts_record[1]} "
-      f"at time {first_texts_record_date_time[1]}")
-print(f"Last record of calls, {last_calls_record[0]} calls {last_calls_record[1]} "
-      f"at time {last_calls_record_date_time[1]},"
-      f" lasting {last_calls_record[3]} seconds")
+print("First record of texts, {} texts {} at time {}"
+      .format(first_texts_record[0], first_texts_record[1], first_texts_record_date_time[1]))
+print("Last record of calls, {} calls {} at time {}, lasting {} seconds"
+      .format(last_calls_record[0], last_calls_record[1], last_calls_record_date_time[1], last_calls_record[3]))
